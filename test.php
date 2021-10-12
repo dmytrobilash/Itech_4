@@ -5,9 +5,9 @@
 </head>
     <h2>Лабораторна робота №4, КІУКІ-19-5, Білаш Дмитро, Варіант №1 </h2>
     <h3>Вхід</h3>
-    <form id="entrform" method="post" action="">
-        <p>Логін:<input type="text" name="mid" required="required" /></p>
-        <p>Password:<input type="password" name="mpassword" required="required" /></p>
+    <form id="form" method="post" action="">
+        <p>Логін:<input type="text" name="mname" required="required" /></p>
+        <p>Пароль:<input type="password" name="mpassword" required="required" /></p>
         <input type="submit" value="Ввійти"/>
     </form>
 
@@ -20,13 +20,13 @@ if (count($_POST)){
         $accessData[trim($username)] = trim($password);
     }
     
-    $mid = isset($_POST['mid']) ? $_POST['mid'] : '';
+    $mname = isset($_POST['mname']) ? $_POST['mname'] : '';
     $mpassword = isset($_POST['mpassword']) ? $_POST['mpassword'] : '';
 
 
-    if (array_key_exists($mid, $accessData) && $mpassword == $accessData[$mid]) {
+    if (array_key_exists($mname, $accessData) && $mpassword == $accessData[$mname]) {
 
-        echo "<br>Ви ввійшли";
+        echo "<br>Привіт, " . htmlspecialchars($_POST["mname"]) . "!";;
     } else {
         echo "<br>Неправельні дані для входу";
     }
