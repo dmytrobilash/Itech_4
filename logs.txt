@@ -1,0 +1,4 @@
+Dmytro, password
+Vasyl, password
+Daria, qwerty
+Max, 1234
